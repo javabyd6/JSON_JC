@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Pierwszy",
+    "lastName": "Pierwszy",
+    "address": {
+      "city": "Bydgoszcz",
+      "street": "Długa"
+    }
+  },
+  {
+    "name": "Drugi",
+    "lastName": "Drugi",
+    "address": {
+      "city": "Bydgoszcz",
+      "street": "Długa"
+    }
+  },
+  {
+    "name": "Trzeci",
+    "lastName": "Trzeci",
+    "address": {
+      "city": "Bydgoszcz",
+      "street": "Długa"
+    }
+  }
+]
