@@ -10,10 +10,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-//
-
-
-
 /**
  * @author Jarek Czaplicki
  */
@@ -47,9 +43,10 @@ public class Main {
 
 
         try {
-            String asd = mapperForPerson.writeValueAsString(listOfPersons);
+            String listOfPersonsStr = mapperForPerson.writeValueAsString(listOfPersons);
             System.out.println(listOfPersons);
-            Files.write(Paths.get("persons.json"),asd.getBytes());
+            Files.write(Paths.get("persons.json"),listOfPersonsStr.getBytes());
+            mapper.writeValue(new File("test.json"),listOfPersons); //działa na obiekcie i nie trzeba zmieniać go na Stringa
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -59,7 +56,7 @@ public class Main {
         Address address = new Address("Bydgoszcz","Długa");
 
         Student student1 = new Student("Pierwszy", "Pierwszy", address);
-        Student student2 = new Student("Drugi", "Drugi", address);
+        Student student2 = new Student("Drugi", "Drugi", new Address("Torun", "Długa 23"));
         Student student3 = new Student("Trzeci", "Trzeci", address);
 
         List<Student> listOfStudents = new ArrayList<>();
@@ -68,9 +65,10 @@ public class Main {
         listOfStudents.add(student3);
 
         try {
-            String asd = mapperForStudents.writeValueAsString(listOfStudents);
+            String listOfStudentsStr = mapperForStudents.writeValueAsString(listOfStudents);
             System.out.println(listOfStudents);
-            Files.write(Paths.get("students.json"),asd.getBytes());
+            Files.write(Paths.get("students.json"),listOfStudentsStr.getBytes());
+
         } catch (IOException e) {
             e.printStackTrace();
         }
