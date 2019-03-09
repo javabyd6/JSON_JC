@@ -4,6 +4,7 @@ package com.sda.json;
  * @author Jarek Czaplicki
  */
 
+
 public class Person {
     String name;
     String lastName;
@@ -37,5 +38,16 @@ public class Person {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
+    }
+
+    public Person(){}
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                '}';
     }
 }

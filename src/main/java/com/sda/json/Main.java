@@ -64,6 +64,25 @@ public class Main {
         listOfStudents.add(student2);
         listOfStudents.add(student3);
 
+        // czytanie z JSON i tworzenie obiektu na jego podstawie
+        File personFile = new File("person.json");
+        try {
+            Person personXX = mapper.readValue(personFile,Person.class);
+            System.out.println(personXX);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // czytanie z JSON i tworzenie tablicy obiektów
+
+        try {
+            Person[] personArray = mapper.readValue(new File("persons.json"),Person[].class);
+            System.out.println(personArray.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         try {
             String listOfStudentsStr = mapperForStudents.writeValueAsString(listOfStudents);
             System.out.println(listOfStudents);

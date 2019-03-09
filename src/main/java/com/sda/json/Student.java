@@ -14,6 +14,15 @@ public class Student {
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address=" + address +
+                '}';
+    }
+
     public String getName() {
         return name;
     }

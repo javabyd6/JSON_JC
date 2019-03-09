@@ -12,6 +12,14 @@ public class Address {
         this.street = street;
     }
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                "city='" + city + '\'' +
+                ", street='" + street + '\'' +
+                '}';
+    }
+
     public String getCity() {
         return city;
     }
